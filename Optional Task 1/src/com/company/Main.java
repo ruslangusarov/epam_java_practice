@@ -18,25 +18,38 @@ public class Main {
         System.out.print("Введите номер упражнения, которое хотели бы проверить: ");
         int exercise = scanner.nextInt();
         int lowest;
+        int line;
+        int [] numberLine = new int [number.length];
         boolean sorted = false;
-        while (!sorted) {
-            sorted = true;
-            for (int i = 0; i < number.length - 1; i++) {
-                if (number[i] > number[i + 1]) {
-                    lowest = number[i];
-                    number[i] = number[i + 1];
-                    number[i + 1] = lowest;
-                    sorted = false;
-                }
-            }
-        }
             switch (exercise) {
 
                 case 1:
+                    while (!sorted) {
+                        sorted = true;
+                        for (int i = 0; i < number.length - 1; i++) {
+                            if (number[i] > number[i + 1]) {
+                                lowest = number[i];
+                                number[i] = number[i + 1];
+                                number[i + 1] = lowest;
+                                sorted = false;
+                            }
+                        }
+                    }
                     System.out.println("Самое длинное число (наибольшее): "+number[number.length-1]);
                     System.out.println("Самое короткое число (наименьшее): "+number[0]);
                     break;
                 case 2:
+                    while (!sorted) {
+                        sorted = true;
+                        for (int i = 0; i < number.length - 1; i++) {
+                            if (number[i] > number[i + 1]) {
+                                lowest = number[i];
+                                number[i] = number[i + 1];
+                                number[i + 1] = lowest;
+                                sorted = false;
+                            }
+                        }
+                    }
                     System.out.println("Числа по возрастанию (длины): ");
                     for (int i = 0; i < number.length; i++) {
                         System.out.print(number[i] + " ");
@@ -49,9 +62,19 @@ public class Main {
                     break;
 
                 case 3:
-                    int line = 1;
+                    while (!sorted) {
+                        sorted = true;
+                        for (int i = 0; i < number.length - 1; i++) {
+                            if (number[i] > number[i + 1]) {
+                                lowest = number[i];
+                                number[i] = number[i + 1];
+                                number[i + 1] = lowest;
+                                sorted = false;
+                            }
+                        }
+                    }
+                    line = 1;
                     int midline = 0;
-                    int [] numberLine = new int [number.length];
                     for (int i=0; i<number.length; i++) {
                         numberLine[i]=9;
                         while (number[i]>numberLine[i]) {
@@ -87,12 +110,10 @@ public class Main {
                     }
                     break;
 
-                /* case 4:
-                    int [] same = new int [number.length];
-                    int n0, n1, n2, n3, n4, n5, n6, n7, n8, n9;
+                    /* case 4:
+                    int [][] digits = new int [number.length][10];
                     for (int i=0;i<number.length-1;i++) {
-                        int line = 1;
-                        int [] numberLine = new int [number.length];
+                        line = 1;
                         for (int c=0; c<number.length; c++) {
                             numberLine[c]=9;
                             while (number[c]>numberLine[c]) {
@@ -100,38 +121,32 @@ public class Main {
                                 numberLine[c]=(numberLine[c]+1)*10-1;
                                 continue;
                             }
-                            numberLine[c]=line;
+                            numberLine[i]=line;
                             line=1;
                         }
-                        for (int c=0;c<number.length;c++) {
-                            switch (numberLine[c]) {
-                                case 1:
-                                    same[c]=numberLine[c];
-                                    break;
-                                case 2:
-                                    n1 = number[c]/10;
-                                    n0 = number[c]-n1*10;
-                                    same[c]=n0==n1?1:2;
-                                    break;
-                                case 3:
-                                    n2 = number[c]/100;
-                                    n1 = (number[c]-n2*100)/10;
-                                    n0 = number[c]-(n2*100+n1*10);
-                                    same[c]=n2==n1==n0?1:0;
-                                    same[c]=same[c]==0&&(n0==n1||n1==n2||n2==n0)?2:3;
-                                    break;
-                                case 4:
-                                    n3 = number[c]/1000;
-                                    n2 = (number[c]-n3*1000)/100;
-                                    n1 = (number[c]-(n3*1000+n2*100))/10;
-                                    n0 = number[c]-(n3*1000+n2*100+n1*10);
-                                    same[c]=n3==n2==n1==n0?1:0;
-                                    same[c]=same[c]==0&&(n0==n1||n1==n2||n2==) */
-
+                    }
+                    for (int i=0; i<number.length-1; i++) {
+                        int ash = number[i];
+                        boolean digit = true;
+                        int counter = 0;
+                        while (digit==true) {
+                            digits[i][counter] = ash % 10;
+                            ash = (ash - digits[i][counter])/10;
+                            counter++;
+                            digit=ash!=0?true:false;
+                            continue;
+                        }
+                    }
+                    int [] numbers = new int [number.length];
+                    for (int i=0; i<number.length-1; i++) {
+                        for (int n=1; n<numberLine[i]-1; n++) {
+                            numbers[i] = 1;
+                            numbers[i] = digits[i][n-1] != digits[i][n] ? numbers[i]++ : numbers[i];
                             }
                         }
+                    break; */
+
                     }
 
             }
     }
-}
