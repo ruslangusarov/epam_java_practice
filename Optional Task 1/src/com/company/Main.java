@@ -110,7 +110,7 @@ public class Main {
                     }
                     break;
 
-                    /* case 4:
+                    case 4:
                     int [][] digits = new int [number.length][10];
                     for (int i=0;i<number.length-1;i++) {
                         line = 1;
@@ -137,14 +137,14 @@ public class Main {
                             continue;
                         }
                     }
-                    int [] numbers = new int [number.length];
-                    for (int i=0; i<number.length-1; i++) {
-                        for (int n=1; n<numberLine[i]-1; n++) {
-                            numbers[i] = 1;
-                            numbers[i] = digits[i][n-1] != digits[i][n] ? numbers[i]++ : numbers[i];
+
+                    /*for (int i=0; i<number.length-1; i++) {
+                        for (int n=0; n<numberLine[i]-1; n++) {
+                            System.out.println(digits[i][n]);
                             }
-                        }
-                    break; */
+                        System.out.println();
+                        }*/
+                    break;
 
                     }
 
